@@ -1,0 +1,18 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "egobude/secretmanagement",
+    "require": {
+        "neos/flow": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Egobude\\SecretManagement\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Egobude.SecretManagement"
+        }
+    }
+}

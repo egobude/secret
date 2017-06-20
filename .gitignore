@@ -2,7 +2,10 @@ Build/*
 !Build/Docker/
 /Configuration/
 /Data/
-/Packages/
+/Packages/Framework/*
+/Packages/Libraries/*
+/Packages/Application/*
+!/Packages/Application/Egobude.*/
 /Web/
 /bin/
 /Readme.rst
