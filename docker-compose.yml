@@ -1,0 +1,42 @@
+version: "2.2"
+
+services:
+
+  php:
+    build: ./Build/Docker/php-fpm
+    image: "secret/php:7.1-fpm-alpine"
+    links:
+      - "mariadb"
+      - "redis"
+    environment:
+      FLOW_CONTEXT: "${FLOW_CONTEXT}"
+    volumes:
+      - "./:/data/"
+
+  nginx:
+    build: ./Build/Docker/nginx
+    image: "secret/nginx:1.11-alpine"
+    command: /bin/sh -c "/data/Build/Docker/nginx/run_nginx.sh"
+    ports:
+      - "${NGINX_PORT}:${NGINX_PORT}"
+    links:
+      - "php"
+    volumes:
+      - "./:/data/"
+    environment:
+      FLOW_CONTEXT: "${FLOW_CONTEXT}"
+      NGINX_PORT: "${NGINX_PORT}"
+
+  redis:
+     build: ./Build/Docker/redis
+     image: "secret/redis:3.2-alpine"
+
+  mariadb:
+    build: ./Build/Docker/mariadb
+    image: "secret/mariadb:10.1-debian-jessie"
+    command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"

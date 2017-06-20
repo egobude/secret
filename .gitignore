@@ -1,4 +1,5 @@
-/Build/
+Build/*
+!Build/Docker/
 /Configuration/
 /Data/
 /Packages/
