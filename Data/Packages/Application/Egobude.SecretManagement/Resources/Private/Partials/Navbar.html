@@ -1,0 +1,24 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <f:link.action controller="Secret" action="index" title="Secrets" class="navbar-brand">
+        ----
+    </f:link.action>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <f:link.action controller="Secret" action="index" title="List secrets" class="nav-link">
+                    List
+                </f:link.action>
+            </li>
+            <li class="nav-item">
+                <f:link.action controller="Secret" action="add" title="Add secret" class="nav-link">
+                    Add
+                </f:link.action>
+            </li>
+        </ul>
+    </div>
+</nav>

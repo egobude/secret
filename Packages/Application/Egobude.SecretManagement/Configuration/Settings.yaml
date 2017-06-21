@@ -1,5 +1,0 @@
-Neos:
-  Flow:
-    mvc:
-      routes:
-        'Egobude.SecretManagement': TRUE

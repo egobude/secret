@@ -1,0 +1,25 @@
+Egobude:
+  SecretManagement:
+    encryptionKey: 'def00000ff196cc48aabc12da45766ef6ed2a1c05459696e664abd12bbbf42067aafd6e4c526854bdba411194ffddbfcf9f4644f6816f0f1ea910a7d7fd24a0be0d9f032'
+Neos:
+  Flow:
+    security:
+      authentication:
+        providers:
+          'Sandstorm.UserManagement:Login':
+            provider: PersistedUsernamePasswordProvider
+            requestPatterns:
+              Sandstorm.UserManagement:NeosFrontend:
+                pattern: Sandstorm\UserManagement\Security\NeosRequestPattern
+                patternOptions:
+                  'area': 'frontend'
+    mvc:
+      routes:
+        'Egobude.SecretManagement': TRUE
+    error:
+      exceptionHandler:
+        renderingGroups:
+          invalidSecretException:
+            matchingExceptionClassNames: ['Egobude\SecretManagement\Exception\InvalidSecretException']
+            options:
+              templatePathAndFilename: 'resource://Egobude.SecretManagement/Private/Templates/Error/Default.html'

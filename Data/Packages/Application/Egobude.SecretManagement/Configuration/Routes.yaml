@@ -1,0 +1,32 @@
+-
+  name: 'Show the link'
+  uriPattern: 'l/{secret}'
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'link'
+
+-
+  name: 'Show a link'
+  uriPattern: 's/{secret}'
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'show'
+
+-
+  name: 'Add a secret'
+  uriPattern: ''
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'add'
+
+-
+  name: 'list'
+  uriPattern: 'list'
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'index'
+

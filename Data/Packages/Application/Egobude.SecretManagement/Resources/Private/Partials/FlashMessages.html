@@ -1,0 +1,28 @@
+<f:flashMessages as="flashMessages">
+
+<div class="flashMessages">
+    <f:groupedFor each="{flashMessages}" as="groupedFlashMessages" groupBy="severity" groupKey="severityType">
+        <f:if condition="{0: severityType} == {0: 'OK'}">
+            <div class="alert alert-success">
+        </f:if>
+        <f:if condition="{0: severityType} == {0: 'Notice'}">
+            <div class="alert alert-info">
+        </f:if>
+        <f:if condition="{0: severityType} == {0: 'Warning'}">
+            <div class="alert alert-warning">
+        </f:if>
+        <f:if condition="{0: severityType} == {0: 'Error'}">
+            <div class="alert alert-danger">
+        </f:if>
+
+        <f:for each="{groupedFlashMessages}" as="flashMessage">
+            <f:if condition="{flashMessage.title}">
+                <strong>{flashMessage.title}:</strong>
+            </f:if>
+            {flashMessage.message}
+        </f:for>
+    </div>
+    </f:groupedFor>
+</div>
+
+</f:flashMessages>

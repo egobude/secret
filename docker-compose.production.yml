@@ -3,21 +3,21 @@ version: "2.1"
 services:
 
   php:
-    build: ./Docker/php-fpm
+    build: ./Build/Docker/php-fpm
     image: "secret/php:7.1-fpm-alpine"
     links:
       - "mariadb"
-      - "mailcatcher"
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
     volumes:
       - "./Data:/data/"
-    mem_limit: 256m
+    mem_limit: 128m
+    restart: always
 
   nginx:
-    build: ./Docker/nginx
+    build: ./Build/Docker/nginx
     image: "secret/nginx:1.11-alpine"
-    command: /bin/sh -c "/run_nginx.sh"
+    command: /bin/sh -c "/data/Build/Docker/nginx/run_nginx.sh"
     ports:
       - "${NGINX_PORT}:${NGINX_PORT}"
     links:
@@ -27,10 +27,11 @@ services:
     environment:
       FLOW_CONTEXT: "${FLOW_CONTEXT}"
       NGINX_PORT: "${NGINX_PORT}"
-    mem_limit: 128m
+    mem_limit: 50m
+    restart: always
 
   mariadb:
-    build: ./Docker/mariadb
+    build: ./Build/Docker/mariadb
     image: "secret/mariadb:10.1-debian-jessie"
     command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
     ports:
@@ -40,13 +41,5 @@ services:
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
-    volumes:
-      - "./Persistence/MySQL:/var/lib/mysql"
     mem_limit: 128m
-
-
-  mailcatcher:
-    build: ./Docker/mailcatcher
-    image: "secret/mailcatcher"
-    ports:
-      - 1080:1080
+    restart: always

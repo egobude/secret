@@ -1,0 +1,28 @@
+-
+  name: 'UserManagementSubroutes'
+  uriPattern: '<UserManagementSubroutes>'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@format':  'html'
+  subRoutes:
+    'UserManagementSubroutes':
+      package: 'Sandstorm.UserManagement'
+
+-
+  name: 'SecretManagementSubroutes'
+  uriPattern: '<SecretManagementSubroutes>'
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@format':  'html'
+  subRoutes:
+    'SecretManagementSubroutes':
+      package: 'Egobude.SecretManagement'
+
+-
+  name: 'Flow'
+  uriPattern: '<FlowSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    'FlowSubroutes':
+      package: 'Neos.Flow'

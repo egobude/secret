@@ -1,6 +1,6 @@
 # Secret Management
 
-Simple tool to manage and share secrets.
+Simple php application to manage and share secrets.
 
 ## Requirements
 
@@ -22,13 +22,14 @@ Simple tool to manage and share secrets.
 
 ### Start up your docker-compose file    
 
-    $ docker-compose up -d   
+    $ docker-compose up -d (Development)
+    $ docker-compose -f docker-compose.production.yaml up -d (Production)
 
 You can reach your project under http://<YOUR_IP_ADRESS:8080
 
 ### Setup Database on first start
 
-    $ docker-compose run php /data/flow doctrine:migrate
+    $ docker-compose exec php ./flow doctrine:migrate
 
 ### Destroy the project
 
