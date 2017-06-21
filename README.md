@@ -26,6 +26,10 @@ Simple tool to manage and share secrets.
 
 You can reach your project under http://<YOUR_IP_ADRESS:8080
 
+### Setup Database on first start
+
+    $ docker-compose run php /data/flow doctrine:migrate
+
 ### Destroy the project
 
     $ docker-compose down -v
