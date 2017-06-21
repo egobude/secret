@@ -5,3 +5,11 @@
     '@package': 'Egobude.SecretManagement'
     '@controller': 'Secret'
     '@action': 'index'
+
+-
+  name: 'Show a link'
+  uriPattern: 'show/{linkToken}'
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'show'
