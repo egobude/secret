@@ -35,6 +35,8 @@ services:
     build: ./Build/Docker/mariadb
     image: "secret/mariadb:10.1-debian-jessie"
     command: "--character-set-server=utf8 --collation-server=utf8_unicode_ci"
+    ports:
+      - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
