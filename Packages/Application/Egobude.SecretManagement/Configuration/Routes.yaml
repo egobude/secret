@@ -1,0 +1,7 @@
+-
+  name: '/'
+  uriPattern: ''
+  defaults:
+    '@package': 'Egobude.SecretManagement'
+    '@controller': 'Secret'
+    '@action': 'index'
