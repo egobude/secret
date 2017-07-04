@@ -20,14 +20,17 @@ Simple php application to manage and share secrets.
 
     $ docker-compose build
 
-### Start up your docker-compose file    
+### Start up your project for development     
 
-    $ docker-compose up -d (Development)
-    $ docker-compose -f docker-compose.production.yaml up -d (Production)
+    $ docker-compose up -d 
+
+### Start up your project for production
+
+    $ docker-compose -f docker-compose.production.yaml up -d
 
 You can reach your project under http://<YOUR_IP_ADRESS:8080
 
-### Setup Database on first start
+### Setup database on first start
 
     $ docker-compose exec php ./flow doctrine:migrate
 
