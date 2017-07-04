@@ -18,11 +18,8 @@
     "require": {
         "neos/flow": "~4.1.0",
         "defuse/php-encryption": "^2.1",
-        "neos/swiftmailer": "^6.0",
         "sandstorm/usermanagement": "*",
-        "flowpack/jobqueue-beanstalkd": "^3.0",
-        "flowpack/jobqueue-doctrine": "^2.0",
-        "react/socket": "^0.8.0"
+        "flowpack/jobqueue-doctrine": "^2.0"
     },
     "require-dev": {
         "neos/kickstarter": "~4.1.0",
