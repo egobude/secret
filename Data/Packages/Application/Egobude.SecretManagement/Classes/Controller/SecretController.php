@@ -45,18 +45,6 @@ class SecretController extends ActionController
     protected $secretService;
 
     /**
-     * @Flow\Inject
-     * @var DeleteSecretJob
-     */
-    protected $deleteSecretJob;
-
-    /**
-     * @Flow\Inject
-     * @var JobManager
-     */
-    protected $jobManager;
-
-    /**
      * indexAction
      *
      * @return void
